@@ -53,6 +53,7 @@ final class NavigateTests: XCTestCase {
         let action: Navigate = try actionFromString("""
         {
             "_beagleAction_": "beagle:resetapplication",
+            "controllerId": "my-controller-id",
             "route": {
                 "url": "schema://path"
             }
@@ -68,7 +69,8 @@ final class NavigateTests: XCTestCase {
                 - shouldPrefetch: false
                 ▿ url: Expression<String>
                   - value: "schema://path"
-            - controllerId: Optional<String>.none
+            ▿ controllerId: Optional<String>
+              - some: "my-controller-id"
         """)
     }
     
